@@ -26,7 +26,7 @@ How can we help ?
 
 # Methods & Implementation
 ![image](https://user-images.githubusercontent.com/82466266/234070947-a8dbec7f-6c51-4146-bee3-5cce4878ebf3.png)
-
+<img src="https://user-images.githubusercontent.com/82466266/234070947-a8dbec7f-6c51-4146-bee3-5cce4878ebf3.png" width=50% height=50%>
 Convolutional neural network (CNN) has been a popular deep learning model for image classification that has shown remarkable performance. For this project, 2 CNN models are used. 
 
 The first prototype is a CNN written from scratch. There are two convolutional layers followed by a max pooling layer respectively. The first convolutional layer has 32 filters with kernel sizes of 3x3 and a rectified linear unit activation. The second convolutional layer is similar to the first, except it has 64 filters. Each max pooling layer reduces the dimensionality of the previous layer by two. The output layer has six units, which corresponds to the six labels for beehive health. Softmax activation is used to output prediction probability for each label. The model contained 1,223,622 trainable parameters. 
