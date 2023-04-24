@@ -13,7 +13,7 @@ Q2. Problem
 How can we help ?
 - Improve the ability to understand the hive health without checking for the hive manually.
 - Devise a non-invasive hive health checkup technique using ML.
-- Studies show that honeybee images flying in/out of the hive can be used to make inferences about the hive health.
+- Studies show that honeybee images flying in/out of the hive can be used to draw inferences about the hive health.
 
 # Contribution
 - Use convolutional neural network (CNN) to design ML models to predict hive health.
