@@ -22,30 +22,18 @@ How can we help ?
 # Dataset Description
 - Our dataset contains 5100+ bee images annotated with location, date, time, subspecies, health condition, caste, and pollen.
 - Dataset link: https://www.kaggle.com/datasets/jenny18/honey-bee-annotated-images
+- The entire dataset was divided into training, validation, and testing roughly in the ratio of 70:20:10. 
 
 # Methods & Implementation
-Main strategies of our project
+![image](https://user-images.githubusercontent.com/82466266/234070947-a8dbec7f-6c51-4146-bee3-5cce4878ebf3.png)
 
-To classify our images we use a convolutional neural network (CNN) as it is the most popular deep learning model for image classification, and past research has shown that it can far outperform other models. The TensorFlow library was used to develop the network. We tested our data using two CNN models. 
+Convolutional neural network (CNN) has been a popular deep learning model for image classification that has shown remarkable performance. For this project, 2 CNN models are used. 
 
-The first prototype is a CNN written from scratch. It contains two convolutional layers. Each layer is followed by a max pooling layer. The first convolutional layer has 32 filters with kernel sizes of 3x3 and a rectified linear unit activation. The second convolutional layer is similar to the first, except it has 64 filters. Each max pooling layer reduces the dimensionality of the previous layer by two. The output layer has six units, which corresponds to the six labels for beehive health. Softmax activation is used to output prediction probability for each label. The model contained 1,223,622 trainable parameters. 
+The first prototype is a CNN written from scratch. There are two convolutional layers followed by a max pooling layer respectively. The first convolutional layer has 32 filters with kernel sizes of 3x3 and a rectified linear unit activation. The second convolutional layer is similar to the first, except it has 64 filters. Each max pooling layer reduces the dimensionality of the previous layer by two. The output layer has six units, which corresponds to the six labels for beehive health. Softmax activation is used to output prediction probability for each label. The model contained 1,223,622 trainable parameters. 
 
-For the second CNN, we use a pretrained model. TensorFlow’s mobile net is chosen as it is a relatively small and efficient CNN2. To make the model suitable (as the model was originally trained for 1,000 different classes) the last six layers were modified so that there were six output classes. In total the model has 3,213,126 trainable parameters.  
- 
-The entire dataset was divided into training, validation, and testing roughly in the ratio of 70:20:10. Parameters were kept the same across both models for consistency in comparison (Table 1).
+The second CNN is a pretrained model. TensorFlow’s mobile net is chosen as it is a relatively small and efficient CNN2. To make the model suitable (as the model was originally trained for 1,000 different classes) the last six layers were modified so that there were six output classes. In total the model has 3,213,126 trainable parameters.  
+![image](https://user-images.githubusercontent.com/82466266/234069628-98f9cf4c-0bf8-4107-9162-c48b10d2645e.png)
 
-Parameter
-Value
-Batch Size
-10
-Epochs
-10
-Learning Rate
-0.0001
-Loss function
-Categorical cross-entropy
-
-Table 1. CNN parameters. 
 
 The code was run from Google Colaboratory using GPU mode. For each epoch, the training time varied from 5 to 39 seconds for the first model and from 22 to 24 seconds for the pretrained CNN. Since this was our first attempt towards developing a model using CNN, we referenced a tutorial3 as guidance.
 
