@@ -73,7 +73,6 @@ Robber bees usually fly towards a hive to destroy the hive and steal any stored 
 ### Future Direction
 - Randomize and automate the dataset segregation into the train/validate/test data sets.
 - Dataset currently has no way to identify the direction of flight of the bees - towards or away from the hive. The direction of flight of bees helps to identify the difference between the robber and healthy bees.
-- The dataset is biased because the source of varroa images is from the same location. Since they are from the same location, the model might train based on the other common feature of the image from the background rather than the bee.
 - MissingQueen data has very few images, and all are most likely for the same hive, therefore the model could be learning based on the image background.
 
 
