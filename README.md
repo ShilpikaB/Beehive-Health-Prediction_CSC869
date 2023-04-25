@@ -1,5 +1,5 @@
 # Background
-Q1. Why bees are important?
+Q1. Why are bees important?
 - A third of the world's food production depends on bees.
 - Major pollinators.
 
@@ -7,13 +7,13 @@ Q2. Problem
 - Declining bee population.
 - Mites and ants infestation.
 - Frequent check-ups on the hive is desirable to monitor the hive strength and health.
-- Manual investigation of beehives is time intensive and often distrupts the beehive environment.
+- Manual investigation of beehives is time intensive and often disrupts the beehive environment.
 
 # Motivation & Objective
 How can we help ?
 - Improve the ability to understand the hive health without checking for the hive manually.
 - Devise a non-invasive hive health checkup technique using ML.
-- Studies show that honeybee images flying in/out of the hive can be used to draw inferences about the hive health.
+- Studies show that honeybee images flying in/out of the hive can be used to draw inferences about the hive's health.
 
 # Contribution
 - Use convolutional neural network (CNN) to design ML models to predict hive health.
@@ -44,6 +44,10 @@ The second CNN is a pretrained model. TensorFlow’s mobile net is chosen as it 
 
 The code was run from Google Colaboratory using GPU mode. For each epoch, the training time varied from 5 to 39 seconds for the first model and from 22 to 24 seconds for the pretrained CNN. Since this was our first attempt towards developing a model using CNN, we referenced a tutorial3 as guidance.
 
+# Code (in Python)
+Jupyter Notebook File: https://github.com/ShilpikaB/Beehive-Health-Prediction_CSC869/blob/main/beeimage-classifier.ipynb
+
+
 # Results
 - On training dataset: 99% Accuracy was achieved for both the CNN models.
 - On validation dataset: 86% and 88% Accuracy for the initial model and the pretrained models.
@@ -63,11 +67,11 @@ In the first model, a unique pattern was observed in the confusion matrix. The v
 Robber bees usually fly towards a hive to destroy the hive and steal any stored nectar. These robber bees have shiny bodies with no pollen. On the other hand, healthy bees when leaving the hive also have shiny bodies and do not have any pollen. They will only have pollen on their bodies when they return to the hive after collecting nectar. Therefore, it is likely for our model to incorrectly distinguish between robber bees and healthy bees since the input data set does not contain any information about the direction with respect to the hive. That is, we cannot conclude whether a bee is flying into or out of the hive which would be essential to differentiate between robber bees flying towards a hive and healthy bees flying away from the hive.
 
 ### Conclusion 
-- The pretrianed CNN model had an improved performance than the CNN model prototype..
+- The pretrained CNN model had an improved performance than the CNN model prototype..
 - The first model performs poorly for the ‘HiveBeingRobbed’ label. The same is reflected in the ROC and AUC for this label where we see that ‘HiveBeingRobbed’ has the lowest AUC. The pretrained model also did not show any significant improvement for this label. However, the performance for the other class labels were drastically improved. This implies that the pretrained model was able to improve the overall image classification problem and also strengthens our assumption that the issue with ‘HiveBeingRobbed’ is at the input data level and not with the model.
 
 ### Future Direction
-- Randomize and automate the dataset seggregation into the train/validate/test data sets.
+- Randomize and automate the dataset segregation into the train/validate/test data sets.
 - Dataset currently has no way to identify the direction of flight of the bees - towards or away from the hive. The direction of flight of bees helps to identify the difference between the robber and healthy bees.
 - The dataset is biased because the source of varroa images is from the same location. Since they are from the same location, the model might train based on the other common feature of the image from the background rather than the bee.
 - MissingQueen data has very few images, and all are most likely for the same hive, therefore the model could be learning based on the image background.
